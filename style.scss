@@ -1,0 +1,9 @@
+@import 'sprite';
+
+body {
+  background: red;
+}
+
+.thingy {
+  @include sprite($arrow);
+}

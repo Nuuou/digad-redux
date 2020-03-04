@@ -1,0 +1,17 @@
+{
+  "name": "digad-redux",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "glob": "^7.1.6",
+    "imagemin": "^7.0.1",
+    "imagemin-pngquant": "^8.0.0",
+    "node-sass": "^4.13.1",
+    "sharp": "^0.24.1",
+    "spritesheet-templates": "^10.5.0",
+    "spritesmith": "^3.4.0"
+  }
+}
