@@ -8,9 +8,11 @@ const templater = require('spritesheet-templates');
 const sass = require('node-sass');
 
 const pixelRatio = 2;
-const spritePattern = 'src/**/*.png';
-const spriteSheetImageOutput = 'dist/sprite.png';
-const spriteSheetStyleOutput = 'sprite.scss';
+const spritePattern = '_ui/skin/src/img/sprite/**/*.png';
+const spriteSheetImageFilename = 'sprite.png';
+const spriteSheetImageOutput = '_ui/skin/src/img';
+const spriteSheetStyleFilename = '_sprite.scss';
+const spriteSheetStyleOutput = '_ui/skin/src/sass';
 
 const sprites = glob.sync(spritePattern);
 Spritesmith.run({
@@ -38,12 +40,6 @@ Spritesmith.run({
     })
   });
 
-  fs.writeFile(path.resolve('./dist/sprite-original.png'), result.image, (spriteErr) => {
-    if (spriteErr) {
-      throw spriteErr;
-    }
-  });
-
   /**
    * IMAGE MINIFICATION.
    */
@@ -57,7 +53,7 @@ Spritesmith.run({
         }),
       ],
     }).then((output) => {
-      fs.writeFile(path.resolve(spriteSheetImageOutput), output, (imageminErr) => {
+      fs.writeFile(path.resolve(spriteSheetImageOutput, spriteSheetImageFilename), output, (imageminErr) => {
         if (imageminErr) {
           throw imageminErr;
         }
@@ -68,7 +64,7 @@ Spritesmith.run({
   /**
    * GENERATE SASS FILE.
    */
-  const customTemplate = fs.readFileSync(path.resolve('./customtemplate.template.handlebars'), 'utf8');
+  const customTemplate = fs.readFileSync(path.resolve('_ui/skin/src/templates/customtemplate.template.handlebars'), 'utf8');
   templater.addHandlebarsTemplate('retinaOnly', customTemplate);
 
   const template = templater({
@@ -76,24 +72,11 @@ Spritesmith.run({
     spritesheet: {
       width: Math.ceil(result.properties.width / pixelRatio),
       height: Math.ceil(result.properties.height / pixelRatio),
-      image: path.relative('./', spriteSheetImageOutput),
+      //image: path.relative('./', spriteSheetImageOutput),
+      //image: '../img/sprite.png',
+      image: path.join(path.relative(spriteSheetStyleOutput, spriteSheetImageOutput), spriteSheetImageFilename),
     }
   }, { format: 'retinaOnly'})
 
-  fs.writeFileSync(path.resolve(spriteSheetStyleOutput), template);
-
-  /**
-   * SASS COMPILATION. TODO: REMOVE.
-   */
-  sass.render({
-    file: path.resolve('./style.scss'),
-    outFile: path.resolve('./style.css'),
-    sourceMap: true,
-  }, (sassErr, sassResult) => {
-    fs.writeFile(path.resolve('./style.css'), sassResult.css, (writeErr) => {
-      if (writeErr) {
-        throw writeErr;
-      }
-    });
-  });
+  fs.writeFileSync(path.resolve(spriteSheetStyleOutput, spriteSheetStyleFilename), template);
 });

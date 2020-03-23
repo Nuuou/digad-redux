@@ -1,0 +1,236 @@
+plugins:
+  - 'stylelint-order'
+  - 'stylelint-scss'
+rules:
+  # General
+  indentation:
+    - 2
+  max-empty-lines: 2
+
+  # Possible errors
+  color-no-invalid-hex: true
+  function-calc-no-unspaced-operator: true
+  function-linear-gradient-no-nonstandard-direction: true
+  string-no-newline: true
+  unit-no-unknown: true
+  block-no-empty: true
+  comment-no-empty: true
+  no-extra-semicolons: true
+
+  #Limit language features
+  shorthand-property-no-redundant-values: true
+
+  # Stylistic Issues
+  function-parentheses-space-inside: 'never'
+  function-url-quotes: 'always'
+  function-whitespace-after: 'always'
+  number-leading-zero: 'always'
+  string-quotes: 'single'
+  length-zero-no-unit: true
+  unit-case: 'lower'
+  value-keyword-case: 'lower'
+  value-list-comma-space-after: 'always-single-line'
+  value-list-comma-space-before: 'never-single-line'
+  property-case: 'lower'
+  declaration-bang-space-after: 'never'
+  declaration-bang-space-before: 'always'
+  declaration-colon-space-after: 'always-single-line'
+  declaration-colon-space-before: 'never'
+  declaration-block-semicolon-newline-after: 'always'
+  declaration-block-semicolon-newline-before: 'never-multi-line'
+  declaration-block-semicolon-space-after: 'always-single-line'
+  declaration-block-semicolon-space-before: 'never'
+  declaration-block-trailing-semicolon: 'always'
+  block-closing-brace-empty-line-before: 'never'
+  block-closing-brace-newline-after: 'always'
+  block-closing-brace-newline-before: 'always-multi-line'
+  block-closing-brace-space-after: 'always-single-line'
+  block-opening-brace-newline-after: 'always-multi-line'
+  selector-attribute-brackets-space-inside: 'never'
+  selector-attribute-operator-space-after: 'never'
+  selector-attribute-operator-space-before: 'never'
+  selector-attribute-quotes: 'always'
+  selector-combinator-space-after: 'always'
+  selector-combinator-space-before: 'always'
+  selector-descendant-combinator-no-non-space: true
+  selector-pseudo-class-case: 'lower'
+  selector-pseudo-class-parentheses-space-inside: 'never'
+  selector-pseudo-element-case: 'lower'
+  selector-type-case: 'lower'
+  selector-list-comma-newline-after: 'always'
+  selector-list-comma-newline-before: 'never-multi-line'
+  selector-list-comma-space-after: 'always-single-line'
+  selector-list-comma-space-before: 'never-single-line'
+  media-feature-colon-space-after: 'always'
+  media-feature-colon-space-before: 'never'
+  media-feature-name-case: 'lower'
+  media-feature-parentheses-space-inside: 'never'
+  media-feature-range-operator-space-after: 'always'
+  media-feature-range-operator-space-before: 'always'
+  at-rule-name-case: 'lower'
+  at-rule-name-space-after: 'always'
+  at-rule-semicolon-newline-after: 'always'
+
+  # Order
+  order/order:
+    -
+      - type: 'at-rule'
+        name: 'include'
+      - custom-properties
+      - dollar-variables
+      - declarations
+      - type: 'at-rule'
+        name: 'include'
+        hasBlock: true
+      - rules
+    - disableFix: true
+  order/properties-order:
+    # Position and Size
+    - properties:
+      - content
+      - display
+      - position
+      - float
+      - clear
+      - flex
+      - flex-basis
+      - flex-direction
+      - flex-flow
+      - flex-grow
+      - flex-shrink
+      - flex-wrap
+      - align-content
+      - align-items
+      - align-self
+      - justify-content
+      - order
+      - width
+      - min-width
+      - max-width
+      - height
+      - min-height
+      - max-height
+      - top
+      - right
+      - bottom
+      - left
+      - margin
+      - margin-top
+      - margin-right
+      - margin-bottom
+      - margin-left
+      - padding
+      - padding-top
+      - padding-right
+      - padding-bottom
+      - padding-left
+
+    # Text
+    - properties:
+      - color
+      - font
+      - font-display
+      - font-family
+      - font-size
+      - font-smoothing
+      - font-style
+      - font-variant
+      - font-weight
+      - letter-spacing
+      - line-height
+      - list-style
+      - text-align
+      - text-decoration
+      - text-indent
+      - text-overflow
+      - text-rendering
+      - text-shadow
+      - text-transform
+      - text-wrap
+      - white-space
+      - word-spacing
+
+    # Background
+    - properties:
+      - background
+      - background-attachment
+      - background-clip
+      - background-color
+      - background-image
+      - background-position
+      - background-repeat
+      - background-size
+
+    # Border
+    - properties:
+      - border
+      - border-top
+      - border-right
+      - border-bottom
+      - border-left
+      - border-width
+      - border-top-width
+      - border-right-width
+      - border-bottom-width
+      - border-left-width
+      - border-style
+      - border-top-style
+      - border-right-style
+      - border-bottom-style
+      - border-left-style
+      - border-radius
+      - border-top-left-radius
+      - border-top-right-radius
+      - border-bottom-left-radius
+      - border-bottom-right-radius
+      - border-color
+      - border-top-color
+      - border-right-color
+      - border-bottom-color
+      - border-left-color
+      - outline
+      - outline-color
+      - outline-offset
+      - outline-style
+      - outline-width
+
+    # Other
+    - properties:
+      - border-collapse
+      - border-spacing
+      - box-shadow
+      - caption-side
+      - cursor
+      - empty-cells
+      - opacity
+      - overflow
+      - quotes
+      - speak
+      - table-layout
+      - vertical-align
+      - visibility
+      - z-index
+
+    # Transform/Transition
+    - properties:
+      - transform
+      - transform-box
+      - transform-origin
+      - transform-style
+      - transition
+      - transition-delay
+      - transition-duration
+      - transition-property
+      - transition-timing-function
+
+  # SCSS
+  scss/at-else-if-parentheses-space-before: 'never'
+  scss/at-function-parentheses-space-before: 'never'
+  scss/at-import-no-partial-leading-underscore: true
+  scss/at-mixin-argumentless-call-parentheses: 'always'
+  scss/at-mixin-parentheses-space-before: 'never'
+  scss/dollar-variable-colon-space-after: 'always'
+  scss/dollar-variable-colon-space-before: 'never'
+  scss/double-slash-comment-inline: 'never'
+  scss/double-slash-comment-whitespace-inside: 'always'
+  scss/operator-no-unspaced: true

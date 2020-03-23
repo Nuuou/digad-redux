@@ -1,0 +1,12 @@
+@import 'sprite';
+
+@include sprites($spritesheet-sprites);
+
+body {
+  background: red;
+  border: none;
+}
+
+.asdfasdf {
+  background-image: url('../img/assets/arrow.png');
+}

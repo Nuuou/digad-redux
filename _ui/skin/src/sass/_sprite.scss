@@ -18,8 +18,8 @@ $arrow-width: 19px;
 $arrow-height: 12px;
 $arrow-total-width: 1428px;
 $arrow-total-height: 299px;
-$arrow-image: 'dist/sprite.png';
-$arrow: (694px, 12px, -694px, -12px, 19px, 12px, 1428px, 299px, 'dist/sprite.png', 'arrow', );
+$arrow-image: '../img/sprite.png';
+$arrow: (694px, 12px, -694px, -12px, 19px, 12px, 1428px, 299px, '../img/sprite.png', 'arrow', );
 $cta-text-name: 'cta-text';
 $cta-text-x: 553px;
 $cta-text-y: 12px;
@@ -29,8 +29,8 @@ $cta-text-width: 136px;
 $cta-text-height: 14px;
 $cta-text-total-width: 1428px;
 $cta-text-total-height: 299px;
-$cta-text-image: 'dist/sprite.png';
-$cta-text: (553px, 12px, -553px, -12px, 136px, 14px, 1428px, 299px, 'dist/sprite.png', 'cta-text', );
+$cta-text-image: '../img/sprite.png';
+$cta-text: (553px, 12px, -553px, -12px, 136px, 14px, 1428px, 299px, '../img/sprite.png', 'cta-text', );
 $dots-name: 'dots';
 $dots-x: 553px;
 $dots-y: 0px;
@@ -40,8 +40,8 @@ $dots-width: 875px;
 $dots-height: 7px;
 $dots-total-width: 1428px;
 $dots-total-height: 299px;
-$dots-image: 'dist/sprite.png';
-$dots: (553px, 0px, -553px, 0px, 875px, 7px, 1428px, 299px, 'dist/sprite.png', 'dots', );
+$dots-image: '../img/sprite.png';
+$dots: (553px, 0px, -553px, 0px, 875px, 7px, 1428px, 299px, '../img/sprite.png', 'dots', );
 $headline-1-1-name: 'headline-1-1';
 $headline-1-1-x: 279px;
 $headline-1-1-y: 0px;
@@ -51,8 +51,8 @@ $headline-1-1-width: 269px;
 $headline-1-1-height: 268px;
 $headline-1-1-total-width: 1428px;
 $headline-1-1-total-height: 299px;
-$headline-1-1-image: 'dist/sprite.png';
-$headline-1-1: (279px, 0px, -279px, 0px, 269px, 268px, 1428px, 299px, 'dist/sprite.png', 'headline-1-1', );
+$headline-1-1-image: '../img/sprite.png';
+$headline-1-1: (279px, 0px, -279px, 0px, 269px, 268px, 1428px, 299px, '../img/sprite.png', 'headline-1-1', );
 $headline-1-2-name: 'headline-1-2';
 $headline-1-2-x: 0px;
 $headline-1-2-y: 0px;
@@ -62,13 +62,13 @@ $headline-1-2-width: 274px;
 $headline-1-2-height: 299px;
 $headline-1-2-total-width: 1428px;
 $headline-1-2-total-height: 299px;
-$headline-1-2-image: 'dist/sprite.png';
-$headline-1-2: (0px, 0px, 0px, 0px, 274px, 299px, 1428px, 299px, 'dist/sprite.png', 'headline-1-2', );
+$headline-1-2-image: '../img/sprite.png';
+$headline-1-2: (0px, 0px, 0px, 0px, 274px, 299px, 1428px, 299px, '../img/sprite.png', 'headline-1-2', );
 $spritesheet-width: 1428px;
 $spritesheet-height: 299px;
-$spritesheet-image: 'dist/sprite.png';
+$spritesheet-image: '../img/sprite.png';
 $spritesheet-sprites: ($arrow, $cta-text, $dots, $headline-1-1, $headline-1-2, );
-$spritesheet: (1428px, 299px, 'dist/sprite.png', $spritesheet-sprites, );
+$spritesheet: (1428px, 299px, '../img/sprite.png', $spritesheet-sprites, );
 
 // The provided mixins are intended to be used with the array-like variables
 //
@@ -134,7 +134,7 @@ $spritesheet: (1428px, 299px, 'dist/sprite.png', $spritesheet-sprites, );
 @mixin sprites($sprites) {
   @each $sprite in $sprites {
     $sprite-name: nth($sprite, 10);
-    .#{$sprite-name} {
+    .icon-#{$sprite-name} {
       @include sprite($sprite);
     }
   }

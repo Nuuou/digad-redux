@@ -1,0 +1,64 @@
+extends:
+  - airbnb
+  - plugin:vue/base
+env:
+  browser: true
+  commonjs: true
+  es6: true
+parserOptions:
+  sourceType: module
+rules:
+  # Downgrade to warnings
+  max-len:
+    - warn
+    - 120
+    - 2
+    - ignoreUrls: true
+      ignoreComments: true
+      ignoreRegExpLiterals: true
+      ignoreStrings: true
+      ignoreTemplateLiterals: true
+  no-use-before-define:
+    - warn
+    - functions: false
+      classes: true
+      variables: true
+  no-undef: warn
+  no-unused-vars: warn
+  no-useless-concat: warn
+  no-param-reassign:
+    - 2
+    - props: false
+
+  # Restricted syntax, removing restriction for ForInStatement and ForOfStatement
+  no-restricted-syntax:
+    - error
+    - LabeledStatement
+    - WithStatement
+
+  # Disabled rules
+  func-names: off
+  func-style: off
+  no-continue: off
+  no-plusplus: off
+
+  # eslint-plugin-import
+  import/no-unresolved: 0
+  import/extensions:
+    - 0
+    - ignorePackages
+  import/no-extraneous-dependencies:
+    - 0
+  import/prefer-default-export:
+    - 0
+
+  # React
+  react/destructuring-assignment:
+    - 0
+  react/jsx-one-expression-per-line:
+    - 0
+  react/jsx-filename-extension:
+    - 1
+    - extensions:
+      - .jsx
+      - .tsx
