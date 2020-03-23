@@ -8,6 +8,11 @@
     "build": "webpack --mode=production --config=webpack.config.build.js",
     "sprite": "node scripts/sprite.js"
   },
+  "digad": {
+    "sprites": {
+      "sprite": {}
+    }
+  },
   "author": "",
   "license": "ISC",
   "devDependencies": {
