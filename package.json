@@ -6,8 +6,7 @@
   "scripts": {
     "dev": "webpack --mode=development --watch --config=webpack.config.dev.js",
     "build": "webpack --mode=production --config=webpack.config.build.js",
-    "sprite": "node scripts/sprite.js",
-    "postinstall": "npm install _ui/libs/utility/greensock/gsap-bonus.tgz"
+    "sprite": "node scripts/sprite.js"
   },
   "digad": {
     "sprites": {
