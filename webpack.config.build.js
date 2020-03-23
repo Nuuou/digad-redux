@@ -5,6 +5,8 @@ const HtmlWebpackTagsPlugin = require('html-webpack-tags-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 const FixStyleOnlyEntriesPlugin = require('webpack-fix-style-only-entries');
+const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
+const StyleExtHtmlWebpackPlugin = require('style-ext-html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const packageJson = require('./package.json');
 
@@ -198,6 +200,10 @@ const webpackConfig = {
       },
       filename: 'index.html',
     }),
+    new ScriptExtHtmlWebpackPlugin({
+      inline: ['vendor.js', 'main.js'],
+    }),
+    new StyleExtHtmlWebpackPlugin(),
     new HtmlWebpackTagsPlugin({
       tags: [],
       scripts: externalScripts,
