@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "webpack --mode=development --watch --config=webpack.config.dev.js",
     "build": "webpack --mode=production --config=webpack.config.build.js",
-    "sprite": "node scripts/sprite.js"
+    "sprite": "node scripts/sprite.js",
+    "postinstall": "npm install _ui/libs/utility/greensock/gsap-bonus.tgz"
   },
   "digad": {
     "sprites": {
@@ -59,6 +60,7 @@
     "webpack-fix-style-only-entries": "^0.4.0"
   },
   "dependencies": {
-    "@babel/runtime-corejs3": "^7.8.4"
+    "@babel/runtime-corejs3": "^7.8.4",
+    "gsap": "file:_ui/libs/utility/greensock/gsap-bonus.tgz"
   }
 }

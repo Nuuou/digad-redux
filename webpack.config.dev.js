@@ -90,7 +90,7 @@ const browserSync = {
 
 const webpackConfig = {
   entry: {
-    main: './_ui/skin/src/js/main.js',
+    main: ['./_ui/skin/src/js/main.js', './_ui/skin/src/js/dev.js'],
     style: './_ui/skin/src/sass/style.scss',
   },
   resolve: {
