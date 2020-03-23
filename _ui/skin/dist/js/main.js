@@ -164,12 +164,10 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
-/* harmony import */ var gsap_GSDevTools__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! gsap/GSDevTools */ "./node_modules/gsap/GSDevTools.js");
+/* harmony import */ var gsap_GSDevTools__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! gsap/GSDevTools */ "./node_modules/gsap/GSDevTools.js");
 
-
-gsap__WEBPACK_IMPORTED_MODULE_0__["default"].registerPlugin(gsap_GSDevTools__WEBPACK_IMPORTED_MODULE_1__["default"]);
-gsap_GSDevTools__WEBPACK_IMPORTED_MODULE_1__["default"].create();
+gsap.registerPlugin(gsap_GSDevTools__WEBPACK_IMPORTED_MODULE_0__["default"]);
+gsap_GSDevTools__WEBPACK_IMPORTED_MODULE_0__["default"].create();
 
 /***/ }),
 
@@ -177,15 +175,13 @@ gsap_GSDevTools__WEBPACK_IMPORTED_MODULE_1__["default"].create();
 /*!*********************************!*\
   !*** ./_ui/skin/src/js/main.js ***!
   \*********************************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports) {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
-
-gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to('.icon-arrow', {
-  x: 200
+gsap.to('.icon-arrow', {
+  duration: 3,
+  x: 200,
+  ease: 'slow( 0.7, 0.7, false)'
 });
 
 /***/ }),
