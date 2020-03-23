@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "webpack --mode=development --watch --config=webpack.config.dev.js",
     "build": "webpack --mode=production --config=webpack.config.build.js",
-    "sprite": "node scripts/sprite.js"
+    "sprite": "node scripts/sprite.js",
+    "sprites": "npm run sprite"
   },
   "digad": {
     "gsapExternals": {
@@ -18,7 +19,7 @@
       "motionpath": false,
       "pixi": false,
       "scrollto": false,
-      "text": true
+      "text": false
     },
     "sprites": {
       "sprite": {}
